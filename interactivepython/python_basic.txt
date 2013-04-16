@@ -1,0 +1,348 @@
+Comments, strings and print
+---------------------------
+
+"This is a string"
+'This is also a string'
+
+# To print these strings and other things to the box on the
+#	right, the word print is used.
+
+print "Output Number One"
+print 'Output Number Two'
+
+
+Numbers — Arithmetic Expressions
+--------------------------------
+There are two kinds of numerical data in Python: integers and decimal numbers.
+Integers correspond to the data type int. Decimal numbers are represented by floating-point numbers corresponding to the data type float.
+Floating-point numbers have around 15 decimal digits of accuracy.
+
+# numbers - two types, an integer or a decimal number
+# two corresponding data types int() and float()
+
+print 3, -1, 3.14159, -2.8
+
+
+# we can convert between data types using int() and float()
+# note that int() takes the "whole" part of a decimal number and doesn't round
+# float() applied to integers is boring
+
+print int(3.1), int(3.7), int(-3.1), int(-3.7)
+
+print float(3), float(-7)
+
+# floating point number have around 15 decimal digits of accuracy
+# pi is 3.1415926535897932384626433832795028841971...
+# square root of two is 1.4142135623730950488016887242096980785696...
+
+# approximation of pi, maintains around 15 decimal digits
+
+print 3.1415926535897932384626433832795028841971
+
+
+# appoximation of square root of two
+
+print 1.4142135623730950488016887242096980785696
+
+# operators
+# +		plus		addition
+# -		minus		subtraction
+# *		times		multiplication
+# /		divided by 	division
+# **    power		exponentiation
+
+print 1 + 2, 3 - 4, 5 * 6, 2 ** 5
+
+
+# note that division computes floating point approximation to exact answer
+
+print 1 / 3, 5 / 2, -7 / 3
+
+
+# consistent with Javascript and Python 3, but not Python 2.6
+# integer division in CodeSkulptor is //
+
+print 1 // 3, 5 // 2, -7 // 3
+
+# expressions - number or a binary operator applied to two expressions
+# minus is also a unary operator and can be applied to a single expression
+
+print 1 + 2 ** 3, 4 - 5 / 6, 7 * 8 + 9 * 10
+
+# expressions are entered as sequence of numbers and operations
+# how are the number and operators grouped to form expressions?
+# operator precedence - "please excuse my dear aunt sallie" = (), **, *, /, +,-
+
+print 1 * 2 + 3 * 4
+print 2 + 12
+
+# always manually group using parentheses when in doubt
+
+print 1 * (2 + 3) * 4
+print 1 * 5 * 4
+
+
+Floats and Integers
+--------------------
+
+# Integers are whole numbers, while floats can be whole
+#	numbers or have fractional parts. CodeSkulptor treats
+#	all numbers as floats unless otherwise stated.
+
+print "Integers:", 5, 19, -2, 37
+print "Floats:", -3.4, 5, 9.99999, 1/3
+print
+
+# There is a way to specifically convert a number from a 
+#	float to an integer and vice versa.
+
+# Float to Integer (int): truncates the decimal (leaves it off)
+print "Ex. 1:", int(3)
+print "Ex. 2:", int(7.4)
+print "Ex. 3:", int(1.9)
+print "Ex. 4:", int(-1.2)
+print "Ex. 5:", int(-2.9)
+print
+
+# Integer to float: doesn't change anything
+print "Ex. 6:", float(9)
+print "Ex. 7:", float(-2)
+
+
+print "--------"
+# Python and CodeSkulptor cannot keep track of an infinite
+#	number of decimal places.
+
+print "Ex. 8:", .12345678901234567890
+
+
+print "--------"
+# Operations using floats and ints are not exact in python,
+#	which leads to some interesting outputs
+
+# These have different final digits and a different number
+#	of digits as well
+print "Ex. 9: ", 4 / 3
+print "Ex. 10:", 25 / 3
+print
+print "Ex. 11:", 1 / 6
+print "Ex. 12:", 13 / 6
+print "Ex. 13:", 601 / 6
+print
+
+# In these ones, the output changes based on the grouping
+#	of terms, even though they are mathematically equivalent
+print "Ex. 14:", 5 * 4 / 3
+print "Ex. 15:", 5 * (4 / 3)
+print "Ex. 16:", 20 / 3
+print
+
+# Here is another weird one
+print "Ex. 17:", 11.2 - 11
+
+
+Order of Operations
+-------------------
+
+# Have you seen this problem on the internet?
+
+# The first example is not 0, because multiplication comes
+#	before addition in the order of operations
+print "Ex. 1:", 1 + 1 + 1 + 1 + 1 * 0
+
+# In this one, the addition is performed first due to the 
+#	parenthesis, so the answer is 0
+print "Ex. 2:", (1 + 1 + 1 + 1 + 1) * 0
+
+# Another example of the power of parenthesis
+print "Ex. 3:", 1 + 1 + 1 + (1 + 1) * 0
+
+
+print "--------"
+# Parenthesis can change the value of an expression by 
+#	changing the order in which operations are computed
+
+#The following examples have the same numbers with the same
+#	operators in the same order, but different results
+print "Ex. 4:", 5 + 6 / 2 - 3
+print "Ex. 5:", (5 + 6) / 2 - 3
+print "Ex. 6:", 5 + 6 / (2 - 3)
+print "Ex. 7:", (5 + 6) / (2 - 3)
+
+
+print "--------"
+# Here are a few more examples of Order of Operations
+# Remember: Please Excuse My Dear Aunt Sally
+# 			(), **, * and / and //, + and -
+# Try to guess what they will print out before looking
+#	at the output
+print "Ex. 8:", 4 / 2 * 5
+print "Ex. 9:", 4 / (2 * 5)
+print
+print "Ex. 10:", 4 - 5 * 3
+print "Ex. 11:", (4 - 5) * 3
+print
+print "Ex. 12:", 3 * 4 ** 2
+print "Ex. 13:", 3 ** 4 * 2
+print "Ex. 14:", 3 ** (4 * 2)
+print
+print "Ex. 15:", 5 + 6 * 3
+print "Ex. 16:", 6 * 3 + 5
+print
+print "Ex. 17:", 7 + 3 // 2
+print "Ex. 18:", (7 + 3) // 2
+
+
+Errors
+------
+
+# Here are some errors you may come across, and some of the
+#	ways they can be caused, as well as some notes on code
+#	readability
+
+# Multiple Operands
+# '+' and '-' signs can appear alone in front of a number, 
+#	but '*' and '/' signs cannot. However, the '+' sign is
+#	utterly useless and should not be used.
+print "Ex. 1:", +1
+print "Ex. 2:", +(-1)
+print "Ex. 3:", +-1
+print "Ex. 4:", -2
+print "Ex. 5:", -(+2)
+print "Ex. 6:", +-2
+print
+
+# Proper spacing is important to avoid confusion
+
+# Looks invalid at first, but is actually 3 - (-1)
+print "Ex. 7:", 3--1
+print "Ex. 8:", 3 - -1
+print
+
+# Uncomment the lines one at a time to see the error messages
+#print *8
+#print /8
+#print + *8
+#print - /8
+
+# Remember the meanings of '//' and '**'
+
+# Looks like an error, but is actually an exponent
+print "Ex. 9:", 2 ** 4
+
+# Looks like an error, but is actually integer division
+print "Ex. 10:", 4 // 3
+
+
+print "--------"
+# Operations must be followed by a number
+
+# Uncomment the lines to see the errors
+#print *
+#print 5 /
+#print 6 -
+#print 78 + 3 +
+#print 5 / * 9
+#print 8 + * 7
+
+# Numbers/expressions must be separated by an operand
+
+# Uncomment the lines to see the errors
+#print 5 6
+#print 5t
+# Note the difference:
+#print 4(5)
+print "Ex. 11:", 4 * (5)
+
+
+print "--------"
+# Be especially careful in cases of missing parenthesis
+
+# Missing opening parenthesis
+#print 7 * 4)
+#print (8 - 2) * 6)
+
+# Missing closing parenthesis
+# This one is tricky, because the error does not appear on
+#	the line with the missing parenthesis
+#print (
+#print ((9 + 3)
+
+print "Ex. 12:", 4
+# Now comment out the above line, and see how the missing
+#	parenthesis error messages change
+
+
+variables - placeholders for important values
+----------------------------------------------
+# used to avoid recomputing values and to
+# give values names that help reader understand code
+
+
+# valid variable names - consists of letters, numbers, underscore (_)
+# starts with letter or underscore
+# case sensitive (capitalization matters)
+
+# legal names - ninja, Ninja, n_i_n_j_a
+# illegal names - 1337, 1337ninja
+
+# Python convention - multiple words joined by _
+# legal names - elite_ninja, leet_ninja, ninja_1337
+# illegal name 1337_ninja
+
+
+
+# assign to variable name using single equal sign =
+# (remember that double equals == is used to test equality)
+
+# examples 
+
+my_name = "Joe Warren"
+print my_name
+
+my_age = 51
+print my_age
+
+# birthday - add one
+
+#my_age += 1
+print my_age
+
+
+# the story of the magic pill
+
+magic_pill = 30
+print my_age - magic_pill
+
+my_grand_dad = 74
+
+print my_grand_dad - 2 * magic_pill
+
+# Temperature examples
+
+# convert from Fahrenheit to Celsuis
+# c = 5 / 9 * (f - 32)
+# use explanatory names
+
+temp_Fahrenheit = 212
+
+temp_Celsius = 5 / 9 * (temp_Fahrenheit - 32)
+
+print temp_Celsius
+
+# test it! 32 Fahrenheit is 0 Celsius, 212 Fahrenheit is 100 Celsius
+
+
+# convert from Celsius to Fahrenheit
+# f = 9 / 5 * c + 32
+
+temp_Celsius = 100
+
+temp_Fahrenheit = 9 / 5 * temp_Celsius + 32
+
+print temp_Fahrenheit
+
+
+# test it!
+
+
